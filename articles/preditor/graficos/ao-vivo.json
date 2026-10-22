@@ -1,0 +1,72 @@
+{
+  "kind": "grupos",
+  "title": "Ao vivo, em sondas novas, o padrão do teste se repete",
+  "source": "Serviço ao vivo, 20.255 medições de 10 sondas em 7 países da América Latina, 24 h até 22/10/2026",
+  "accent": "Random Forest",
+  "unit": "",
+  "decimals": 2,
+  "views": [
+    {
+      "label": "Ao vivo",
+      "rows": [
+        {
+          "label": "Nota geral",
+          "values": [
+            {
+              "series": "Régua",
+              "value": 0.5560196419919278,
+              "low": null,
+              "high": null,
+              "note": "F1 macro, de 0 a 1"
+            },
+            {
+              "series": "Random Forest",
+              "value": 0.5906416423272389,
+              "low": null,
+              "high": null,
+              "note": "F1 macro, de 0 a 1"
+            }
+          ]
+        },
+        {
+          "label": "Falhas encontradas",
+          "values": [
+            {
+              "series": "Régua",
+              "value": 0.39267015706806285,
+              "low": null,
+              "high": null,
+              "note": "achou 75 de 191 falhas"
+            },
+            {
+              "series": "Random Forest",
+              "value": 0.3507853403141361,
+              "low": null,
+              "high": null,
+              "note": "achou 67 de 191 falhas"
+            }
+          ]
+        },
+        {
+          "label": "Acerto quando avisa FALHA",
+          "values": [
+            {
+              "series": "Régua",
+              "value": 0.3768844221105528,
+              "low": null,
+              "high": null,
+              "note": "acertou 75 de 199 avisos"
+            },
+            {
+              "series": "Random Forest",
+              "value": 0.6320754716981132,
+              "low": null,
+              "high": null,
+              "note": "acertou 67 de 106 avisos"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

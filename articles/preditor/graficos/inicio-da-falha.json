@@ -1,0 +1,75 @@
+{
+  "kind": "barras",
+  "title": "Prever o começo de uma falha: ninguém passa de 20%",
+  "source": "Validação: 201 casos em que o caminho estava OK e 12 minutos depois estava em FALHA",
+  "accent": "Random Forest",
+  "unit": "%",
+  "decimals": 1,
+  "views": [
+    {
+      "label": "Validação",
+      "rows": [
+        {
+          "label": "Régua",
+          "values": [
+            {
+              "series": "",
+              "value": 0.0,
+              "low": null,
+              "high": null,
+              "note": "0 de 201 casos"
+            }
+          ]
+        },
+        {
+          "label": "Primeira árvore",
+          "values": [
+            {
+              "series": "",
+              "value": 18.407999999999998,
+              "low": null,
+              "high": null,
+              "note": "37 de 201 casos"
+            }
+          ]
+        },
+        {
+          "label": "Árvore ajustada",
+          "values": [
+            {
+              "series": "",
+              "value": 16.4179,
+              "low": null,
+              "high": null,
+              "note": "33 de 201 casos"
+            }
+          ]
+        },
+        {
+          "label": "Random Forest",
+          "values": [
+            {
+              "series": "",
+              "value": 17.4129,
+              "low": null,
+              "high": null,
+              "note": "35 de 201 casos"
+            }
+          ]
+        },
+        {
+          "label": "XGBoost",
+          "values": [
+            {
+              "series": "",
+              "value": 19.900499999999997,
+              "low": null,
+              "high": null,
+              "note": "40 de 201 casos"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,94 @@
+/* Moldura de janela para prints de outros sites: a barra com bolinhas diz "isto é uma captura". */
+.moldura {
+  margin: 24px 0 8px;
+}
+.moldura__janela {
+  overflow: hidden;
+  background: var(--surface);
+  border: var(--border);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow);
+}
+.moldura__barra {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 12px;
+  background: var(--paper);
+  border-bottom: var(--border);
+}
+.moldura__bolinhas {
+  display: flex;
+  flex-shrink: 0;
+  gap: 6px;
+}
+.moldura__bolinhas span {
+  width: 10px;
+  height: 10px;
+  border: var(--border);
+  border-radius: 50%;
+  background: var(--surface);
+}
+.moldura__bolinhas span:first-child {
+  background: var(--accent);
+}
+.moldura__rotulo {
+  flex: 1;
+  min-width: 0;
+  padding: 3px 10px;
+  overflow: hidden;
+  font-size: 11px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  background: var(--surface);
+  border: var(--border);
+  border-radius: 999px;
+}
+.moldura__tela img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+/* ".moldura ..." ganha de ".reader__section p", que deixaria a legenda com 17 px */
+.moldura .moldura__legenda {
+  margin: 10px 0 0;
+  font-size: 11px;
+  line-height: 1.5;
+  color: var(--muted);
+}
+
+/* Dentro do card de projeto: a caixa do card já tem borda, então a janela só preenche o espaço. */
+.moldura--embutida {
+  height: 100%;
+  margin: 0;
+}
+.moldura--embutida .moldura__janela {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+.moldura--embutida .moldura__barra {
+  padding: 5px 8px;
+  gap: 8px;
+}
+.moldura--embutida .moldura__bolinhas span {
+  width: 7px;
+  height: 7px;
+}
+.moldura--embutida .moldura__rotulo {
+  padding: 1px 8px;
+  font-size: 9px;
+}
+.moldura--embutida .moldura__tela {
+  flex: 1;
+  min-height: 0;
+  background: var(--paper);
+}
+/* O print é largo (~2,3:1) e a caixa é 16:10: mostra inteiro, sem cortar o mapa nem os números. */
+.moldura--embutida .moldura__tela img {
+  height: 100%;
+  object-fit: contain;
+}

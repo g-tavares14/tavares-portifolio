@@ -1,0 +1,67 @@
+{
+  "kind": "pilha",
+  "title": "Com o piso, FALHA cai de quase um quarto dos exemplos para 5,4%",
+  "source": "Medições usadas para treinar e comparar os modelos",
+  "accent": "FALHA",
+  "unit": "%",
+  "decimals": 1,
+  "views": [
+    {
+      "label": "Treino + validação",
+      "rows": [
+        {
+          "label": "Regra original",
+          "values": [
+            {
+              "series": "OK",
+              "value": 62.333099999999995,
+              "low": null,
+              "high": null,
+              "note": "30.014 medições"
+            },
+            {
+              "series": "RISCO",
+              "value": 13.900000000000002,
+              "low": null,
+              "high": null,
+              "note": "6.693 medições"
+            },
+            {
+              "series": "FALHA",
+              "value": 23.7669,
+              "low": null,
+              "high": null,
+              "note": "11.444 medições"
+            }
+          ]
+        },
+        {
+          "label": "Com piso de 30%",
+          "values": [
+            {
+              "series": "OK",
+              "value": 76.8146,
+              "low": null,
+              "high": null,
+              "note": "36.987 medições"
+            },
+            {
+              "series": "RISCO",
+              "value": 17.7774,
+              "low": null,
+              "high": null,
+              "note": "8.560 medições"
+            },
+            {
+              "series": "FALHA",
+              "value": 5.408,
+              "low": null,
+              "high": null,
+              "note": "2.604 medições"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

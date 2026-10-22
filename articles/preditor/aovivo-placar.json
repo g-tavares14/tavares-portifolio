@@ -1,0 +1,56 @@
+{
+  "fonte": "https://d3csgsins36z0x.cloudfront.net/dados/aovivo.json",
+  "janela_inicio": "2026-10-21T18:18:50Z",
+  "janela_fim": "2026-10-22T18:18:48Z",
+  "ao_vivo_desde": "2026-10-16T11:41:18Z",
+  "fluxos": 57,
+  "sondas": 10,
+  "paises_das_sondas": [
+    "AR",
+    "CL",
+    "CO",
+    "CR",
+    "MX",
+    "PE",
+    "VE"
+  ],
+  "medicoes_conferidas": 20255,
+  "matriz_modelo": {
+    "OK": {
+      "OK": 16132,
+      "RISCO": 758,
+      "FALHA": 21
+    },
+    "RISCO": {
+      "OK": 2129,
+      "RISCO": 1006,
+      "FALHA": 18
+    },
+    "FALHA": {
+      "OK": 79,
+      "RISCO": 45,
+      "FALHA": 67
+    }
+  },
+  "matriz_regua": {
+    "OK": {
+      "OK": 14965,
+      "RISCO": 1870,
+      "FALHA": 76
+    },
+    "RISCO": {
+      "OK": 1846,
+      "RISCO": 1259,
+      "FALHA": 48
+    },
+    "FALHA": {
+      "OK": 65,
+      "RISCO": 51,
+      "FALHA": 75
+    }
+  },
+  "ok_para_falha": {
+    "n": 65,
+    "acertos_modelo": 0
+  }
+}

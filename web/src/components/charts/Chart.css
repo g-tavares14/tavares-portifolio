@@ -1,0 +1,177 @@
+/* Gráficos dos artigos: mesmo vocabulário do resto do site (borda preta, sombra dura, um amarelo só). */
+.chart {
+  margin: 28px 0 8px;
+  padding: 18px 20px 14px;
+  background: var(--bg);
+  border: var(--border);
+  border-radius: var(--radius-card);
+  box-shadow: 4px 4px 0 var(--ink);
+}
+.chart__head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+.chart__title {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.35;
+}
+.chart__views {
+  display: flex;
+  flex-shrink: 0;
+  gap: 6px;
+}
+.chart__view {
+  padding: 5px 10px;
+  font-size: 11px;
+  background: var(--surface);
+  border: var(--border);
+  border-radius: 999px;
+  cursor: pointer;
+  transition: transform 0.15s var(--ease), box-shadow 0.15s var(--ease);
+}
+.chart__view:hover {
+  transform: translate(-1px, -1px);
+  box-shadow: 2px 2px 0 var(--ink);
+}
+.chart__view.is-on {
+  background: var(--ink);
+  color: var(--bg);
+}
+/* ".chart ..." ganha de ".reader__section p/ul", que deixaria a legenda e a fonte com 17 px */
+.chart .chart__legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 16px;
+  margin: 12px 0 0;
+  padding: 0;
+  list-style: none;
+  font-size: 11px;
+  line-height: 1.4;
+}
+.chart .chart__legend li {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.chart__swatch {
+  width: 12px;
+  height: 12px;
+  border: var(--border);
+  border-radius: 3px;
+}
+.chart__plot {
+  position: relative;
+  margin-top: 14px;
+}
+.chart__plot svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+.chart__label {
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 500;
+  fill: var(--ink);
+}
+.chart__value,
+.chart__tick {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  fill: var(--ink);
+}
+.chart__value--small {
+  font-size: 11px;
+}
+.chart__tick {
+  fill: var(--muted);
+  font-size: 10px;
+}
+.chart__grid {
+  stroke: var(--ink);
+  stroke-opacity: 0.12;
+}
+.chart__axis {
+  stroke: var(--ink);
+  stroke-width: 2;
+}
+.chart__zero {
+  stroke: var(--ink);
+  stroke-width: 1.5;
+  stroke-dasharray: 4 4;
+}
+.chart__mark {
+  stroke: var(--ink);
+  stroke-width: 2;
+  cursor: pointer;
+  outline: none;
+  transition: x 0.4s var(--ease), y 0.4s var(--ease), width 0.4s var(--ease), height 0.4s var(--ease);
+}
+rect.chart__mark:hover,
+rect.chart__mark:focus-visible {
+  stroke-width: 3.5;
+}
+g.chart__mark {
+  stroke-width: 0;
+}
+.chart__whisker {
+  stroke: var(--ink);
+  stroke-width: 2;
+}
+.chart__dot {
+  stroke: var(--ink);
+  stroke-width: 2;
+}
+g.chart__mark:hover .chart__dot,
+g.chart__mark:focus-visible .chart__dot {
+  stroke-width: 3.5;
+}
+.chart__tip {
+  position: absolute;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  max-width: 260px;
+  padding: 7px 10px;
+  font-size: 11px;
+  line-height: 1.4;
+  background: var(--surface);
+  border: var(--border);
+  border-radius: 8px;
+  box-shadow: 3px 3px 0 var(--ink);
+  transform: translate(-50%, calc(-100% - 10px));
+  pointer-events: none;
+  white-space: nowrap;
+}
+.chart__tip span {
+  color: var(--muted);
+  white-space: normal;
+}
+.chart .chart__source {
+  margin: 10px 0 0;
+  font-size: 10px;
+  line-height: 1.4;
+  color: var(--muted);
+}
+
+@media (max-width: 560px) {
+  .chart {
+    padding: 14px 12px 12px;
+  }
+  .chart__head {
+    flex-direction: column;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .chart__mark,
+  .chart__view {
+    transition: none;
+  }
+}

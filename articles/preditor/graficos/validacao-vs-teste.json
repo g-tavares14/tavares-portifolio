@@ -1,0 +1,134 @@
+{
+  "kind": "grupos",
+  "title": "No teste, a floresta acerta mais quando avisa, mas acha menos falhas",
+  "source": "Validação: 13.490 medições. Teste, aberto uma única vez: 20.507 medições",
+  "accent": "Random Forest",
+  "unit": "",
+  "decimals": 2,
+  "views": [
+    {
+      "label": "Validação",
+      "rows": [
+        {
+          "label": "Nota geral",
+          "values": [
+            {
+              "series": "Régua",
+              "value": 0.635522,
+              "low": null,
+              "high": null,
+              "note": "F1 macro, de 0 a 1"
+            },
+            {
+              "series": "Random Forest",
+              "value": 0.697714,
+              "low": null,
+              "high": null,
+              "note": "F1 macro, de 0 a 1"
+            }
+          ]
+        },
+        {
+          "label": "Falhas encontradas",
+          "values": [
+            {
+              "series": "Régua",
+              "value": 0.4983108108108108,
+              "low": null,
+              "high": null,
+              "note": "achou 295 de 592 falhas"
+            },
+            {
+              "series": "Random Forest",
+              "value": 0.5050675675675675,
+              "low": null,
+              "high": null,
+              "note": "achou 299 de 592 falhas"
+            }
+          ]
+        },
+        {
+          "label": "Acerto quando avisa FALHA",
+          "values": [
+            {
+              "series": "Régua",
+              "value": 0.5025553662691652,
+              "low": null,
+              "high": null,
+              "note": "acertou 295 de 587 avisos"
+            },
+            {
+              "series": "Random Forest",
+              "value": 0.7346437346437347,
+              "low": null,
+              "high": null,
+              "note": "acertou 299 de 407 avisos"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "label": "Teste",
+      "rows": [
+        {
+          "label": "Nota geral",
+          "values": [
+            {
+              "series": "Régua",
+              "value": 0.613207,
+              "low": null,
+              "high": null,
+              "note": "F1 macro, de 0 a 1"
+            },
+            {
+              "series": "Random Forest",
+              "value": 0.669907,
+              "low": null,
+              "high": null,
+              "note": "F1 macro, de 0 a 1"
+            }
+          ]
+        },
+        {
+          "label": "Falhas encontradas",
+          "values": [
+            {
+              "series": "Régua",
+              "value": 0.4312,
+              "low": null,
+              "high": null,
+              "note": "achou 539 de 1.250 falhas"
+            },
+            {
+              "series": "Random Forest",
+              "value": 0.3816,
+              "low": null,
+              "high": null,
+              "note": "achou 477 de 1.250 falhas"
+            }
+          ]
+        },
+        {
+          "label": "Acerto quando avisa FALHA",
+          "values": [
+            {
+              "series": "Régua",
+              "value": 0.4336283185840708,
+              "low": null,
+              "high": null,
+              "note": "acertou 539 de 1.243 avisos"
+            },
+            {
+              "series": "Random Forest",
+              "value": 0.7025036818851251,
+              "low": null,
+              "high": null,
+              "note": "acertou 477 de 679 avisos"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

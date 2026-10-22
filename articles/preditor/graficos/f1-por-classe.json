@@ -1,0 +1,114 @@
+{
+  "kind": "grupos",
+  "title": "OK é fácil para todos; RISCO e FALHA separam os modelos da régua",
+  "source": "Validação: 13.490 medições de 79 caminhos. Régua = \"vai ficar igual a agora\"",
+  "accent": "Random Forest",
+  "unit": "",
+  "decimals": 2,
+  "views": [
+    {
+      "label": "Validação",
+      "rows": [
+        {
+          "label": "OK",
+          "values": [
+            {
+              "series": "Régua",
+              "value": 0.894273,
+              "low": null,
+              "high": null,
+              "note": null
+            },
+            {
+              "series": "Árvore ajustada",
+              "value": 0.915776,
+              "low": null,
+              "high": null,
+              "note": null
+            },
+            {
+              "series": "Random Forest",
+              "value": 0.917254,
+              "low": null,
+              "high": null,
+              "note": null
+            },
+            {
+              "series": "XGBoost",
+              "value": 0.916579,
+              "low": null,
+              "high": null,
+              "note": null
+            }
+          ]
+        },
+        {
+          "label": "RISCO",
+          "values": [
+            {
+              "series": "Régua",
+              "value": 0.511868,
+              "low": null,
+              "high": null,
+              "note": null
+            },
+            {
+              "series": "Árvore ajustada",
+              "value": 0.573746,
+              "low": null,
+              "high": null,
+              "note": null
+            },
+            {
+              "series": "Random Forest",
+              "value": 0.577289,
+              "low": null,
+              "high": null,
+              "note": null
+            },
+            {
+              "series": "XGBoost",
+              "value": 0.586759,
+              "low": null,
+              "high": null,
+              "note": null
+            }
+          ]
+        },
+        {
+          "label": "FALHA",
+          "values": [
+            {
+              "series": "Régua",
+              "value": 0.500424,
+              "low": null,
+              "high": null,
+              "note": null
+            },
+            {
+              "series": "Árvore ajustada",
+              "value": 0.565752,
+              "low": null,
+              "high": null,
+              "note": null
+            },
+            {
+              "series": "Random Forest",
+              "value": 0.598599,
+              "low": null,
+              "high": null,
+              "note": null
+            },
+            {
+              "series": "XGBoost",
+              "value": 0.598425,
+              "low": null,
+              "high": null,
+              "note": null
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

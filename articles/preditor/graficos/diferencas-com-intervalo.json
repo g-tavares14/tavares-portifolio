@@ -1,0 +1,51 @@
+{
+  "kind": "intervalo",
+  "title": "A floresta ganha da régua; contra o XGBoost, é empate",
+  "source": "Diferença de nota, refeita 2.000 vezes sorteando os 79 caminhos. A faixa mostra onde a diferença real deve estar (95% de confiança)",
+  "accent": "Random Forest contra a régua",
+  "unit": "",
+  "decimals": 3,
+  "views": [
+    {
+      "label": "Validação",
+      "rows": [
+        {
+          "label": "Random Forest contra a régua",
+          "values": [
+            {
+              "series": "",
+              "value": 0.062192,
+              "low": 0.026756,
+              "high": 0.07499,
+              "note": null
+            }
+          ]
+        },
+        {
+          "label": "XGBoost contra a régua",
+          "values": [
+            {
+              "series": "",
+              "value": 0.065066,
+              "low": 0.024018,
+              "high": 0.081249,
+              "note": null
+            }
+          ]
+        },
+        {
+          "label": "XGBoost contra a Random Forest",
+          "values": [
+            {
+              "series": "",
+              "value": 0.002874,
+              "low": -0.004271,
+              "high": 0.011253,
+              "note": null
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

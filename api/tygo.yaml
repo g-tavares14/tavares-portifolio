@@ -1,0 +1,9 @@
+# Gera os tipos do front a partir de internal/model: `go tool tygo generate`
+packages:
+  - path: "portfolio/api/internal/model"
+    output_path: "../web/src/types/api.gen.ts"
+    # O Go envia ponteiros nil como null (sem omitempty), então o TS precisa de `T | null`.
+    optional_type: "null"
+    frontmatter: |
+      // Gerado por tygo a partir de api/internal/model. Não edite à mão:
+      // mude as structs em Go e rode `go tool tygo generate` dentro de api/.

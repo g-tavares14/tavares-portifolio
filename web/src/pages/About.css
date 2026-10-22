@@ -1,0 +1,586 @@
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes eq {
+  0%,
+  100% {
+    transform: scaleY(0.3);
+  }
+  50% {
+    transform: scaleY(1);
+  }
+}
+@keyframes pop {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -46%) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+.about__scene {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  transition: transform 0.45s var(--ease);
+}
+
+/* Camada de fora: posição e escala (não muda com o mouse) */
+.tilt-card {
+  position: absolute;
+  pointer-events: auto;
+}
+.tilt-card:hover {
+  z-index: 30 !important;
+}
+.tilt-card__frame {
+  position: absolute;
+  inset: -18px;
+  border: var(--border);
+  border-radius: 22px;
+  pointer-events: none;
+  opacity: 0;
+  transform: scale(0.98);
+  transition: opacity 0.3s ease, transform 0.45s var(--ease);
+}
+.tilt-card:hover .tilt-card__frame {
+  opacity: 1;
+  transform: scale(1);
+}
+/* Camada de dentro: inclinação e parallax */
+.tilt-card__tilt {
+  transition: transform 0.4s var(--ease);
+}
+.tilt-card__body {
+  position: relative;
+  background: var(--surface);
+  border: var(--border);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow);
+  transition: transform 0.25s var(--ease), box-shadow 0.25s var(--ease);
+}
+.tilt-card:hover .tilt-card__body {
+  transform: translate(-4px, -4px);
+  box-shadow: 10px 10px 0 var(--ink);
+}
+
+.dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent);
+  border: 1.5px solid var(--ink);
+}
+.dot--ring {
+  width: 10px;
+  height: 10px;
+  border-width: 2px;
+}
+
+/* ── Cartão-postal ── */
+.postcard {
+  display: flex;
+  gap: 24px;
+  padding: 22px;
+}
+.postcard__clip {
+  position: absolute;
+  top: -30px;
+  left: 40px;
+  z-index: 3;
+  fill: none;
+  stroke: var(--ink);
+  stroke-width: 2.2;
+  stroke-linecap: round;
+}
+.postcard__stamp {
+  flex: 0 0 172px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 10px;
+  border: 2px dashed var(--ink);
+  border-radius: 4px;
+}
+.postcard__photo {
+  display: block;
+  width: 100%;
+  height: 196px;
+  object-fit: cover;
+  border: var(--border);
+  border-radius: 2px;
+}
+.postcard__photo--empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: var(--paper);
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+}
+.postcard__caption {
+  display: flex;
+  justify-content: space-between;
+  gap: 6px;
+  font-size: 10px;
+}
+.postcard__caption span:first-child {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.postcard__info {
+  flex: 1 1 auto;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.postcard__top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+.postcard__top .chip {
+  gap: 6px;
+}
+.postcard__postmark {
+  fill: none;
+  stroke: var(--ink);
+  stroke-width: 1.5;
+}
+.postcard__postmark text {
+  fill: var(--ink);
+  stroke: none;
+  font-family: var(--font-mono);
+  font-size: 10px;
+}
+.postcard__kicker {
+  font-size: 11px;
+  color: var(--muted);
+}
+.postcard__name {
+  margin: 6px 0 0;
+  font-size: 36px;
+  line-height: 1;
+  font-weight: 700;
+  letter-spacing: -0.035em;
+}
+.postcard__role {
+  margin: 8px 0 0;
+  font-size: 15px;
+  line-height: 1.4;
+  color: var(--muted);
+}
+.postcard__socials {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.social {
+  position: relative;
+  z-index: 2;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: var(--border);
+  border-radius: 8px;
+  background: var(--surface);
+  box-shadow: 3px 3px 0 var(--ink);
+}
+.postcard__bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding-top: 14px;
+  border-top: 2px dashed var(--ink);
+}
+.postcard__route {
+  font-size: 11px;
+}
+
+/* ── Telemetria ── */
+.telemetry {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 20px;
+}
+.telemetry__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.telemetry__title {
+  margin: 0;
+  font-size: 12px;
+  font-weight: 700;
+}
+.telemetry__rows {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin: 0;
+  font-size: 13px;
+  letter-spacing: 0;
+}
+.telemetry__rows div {
+  display: flex;
+  gap: 6px;
+}
+.telemetry__rows dt {
+  color: var(--muted);
+}
+.telemetry__rows dd {
+  margin: 0;
+}
+.heatmap {
+  display: grid;
+  grid-template-columns: repeat(26, minmax(0, 1fr));
+  grid-auto-flow: column;
+  grid-template-rows: repeat(7, auto);
+  gap: 3px;
+  padding: 10px;
+  border: var(--border);
+  border-radius: 8px;
+  background: var(--bg);
+}
+.heatmap__cell {
+  display: block;
+  aspect-ratio: 1;
+  border-radius: 2px;
+  background: #e6e1d3;
+}
+.heatmap__cell--1 {
+  background: color-mix(in srgb, var(--accent) 35%, #e6e1d3);
+}
+.heatmap__cell--2 {
+  background: color-mix(in srgb, var(--accent) 70%, #e6e1d3);
+}
+.heatmap__cell--3 {
+  background: var(--accent);
+}
+.heatmap__cell--4 {
+  background: var(--ink);
+}
+.telemetry__legend {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 10px;
+  color: var(--muted);
+}
+.telemetry__scale {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+.telemetry__scale .heatmap__cell {
+  width: 10px;
+}
+
+/* ── Toca-discos ── */
+.radio {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 14px;
+}
+.radio__deck {
+  position: relative;
+  height: 186px;
+  display: flex;
+  align-items: center;
+  padding-left: 12px;
+  background: var(--paper);
+  border: var(--border);
+  border-radius: 10px;
+  overflow: hidden;
+}
+.radio__screw {
+  position: absolute;
+  left: 10px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--ink);
+}
+.radio__screw--top {
+  top: 10px;
+}
+.radio__screw--bottom {
+  bottom: 10px;
+}
+.radio__platter {
+  flex: 0 0 166px;
+  height: 166px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: var(--border);
+  border-radius: 50%;
+  background: var(--surface);
+}
+.radio__record {
+  width: 152px;
+  height: 152px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: repeating-radial-gradient(circle at center, #1d1d1d 0 2px, #2b2b2b 2px 4px);
+}
+.spin {
+  animation: spin 2.8s linear infinite;
+}
+.radio__label {
+  width: 58px;
+  height: 58px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  border: var(--border);
+  border-radius: 50%;
+  background: var(--accent);
+  font-size: 7px;
+}
+.radio__hole {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--ink);
+}
+.radio__arm {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  overflow: visible;
+  transform-origin: 144px 18px;
+  transition: transform 0.8s var(--ease);
+}
+.radio__arm line {
+  stroke: var(--ink);
+  stroke-width: 4;
+  stroke-linecap: round;
+}
+.radio__arm rect,
+.radio__arm circle {
+  fill: var(--surface);
+  stroke: var(--ink);
+  stroke-width: 2;
+}
+.radio__arm .radio__pivot {
+  fill: var(--ink);
+  stroke: none;
+}
+.radio__play {
+  position: absolute;
+  right: 12px;
+  bottom: 12px;
+  z-index: 2;
+  background: var(--accent);
+}
+.radio__play:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+.radio__info {
+  display: flex;
+  gap: 14px;
+  padding: 12px 14px;
+  background: var(--ink);
+  color: var(--bg);
+  border-radius: 8px;
+}
+.radio__main {
+  flex: 1 1 auto;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.radio__status {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 10px;
+}
+.radio__onair {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.radio__onair .dot {
+  width: 6px;
+  height: 6px;
+  border: 0;
+}
+.radio__title {
+  margin: 0;
+  font-size: 18px;
+  line-height: 1.1;
+  font-weight: 700;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.radio__artist {
+  font-size: 12px;
+  color: var(--muted-on-ink);
+}
+.radio__progress {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 10px;
+  letter-spacing: 0;
+}
+.radio__bar {
+  flex: 1 1 auto;
+  height: 4px;
+  border-radius: 999px;
+  background: #3a3a3a;
+  overflow: hidden;
+}
+.radio__bar div {
+  height: 100%;
+  background: var(--accent);
+  transition: width 1s linear;
+}
+.radio__eq {
+  display: flex;
+  align-items: flex-end;
+  gap: 2px;
+  height: 14px;
+}
+.radio__eq span {
+  display: block;
+  width: 3px;
+  height: 14px;
+  background: var(--bg);
+  transform-origin: bottom;
+  animation: eq 0.9s ease-in-out infinite;
+}
+.radio__side {
+  flex: 0 0 82px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-left: 12px;
+  border-left: 1px solid #f7f5ee33;
+  font-size: 10px;
+}
+.radio__muted {
+  color: var(--muted-on-ink);
+}
+
+/* ── Carta ── */
+.letter {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  z-index: 80;
+  width: 620px;
+  max-width: calc(100% - 32px);
+  max-height: calc(100vh - 140px);
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 28px 32px 30px;
+  background: var(--surface);
+  border: var(--border);
+  border-radius: var(--radius-card);
+  box-shadow: 10px 10px 0 var(--ink);
+  transform: translate(-50%, -50%);
+  animation: pop 0.5s var(--ease) both;
+}
+.letter__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.letter__kicker {
+  font-size: 11px;
+  color: var(--muted);
+}
+.letter__close {
+  border-radius: 8px;
+}
+.letter__title {
+  margin: 0;
+  font-size: 26px;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+.letter__p {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.6;
+}
+.letter__foot {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 16px;
+  padding-top: 14px;
+  border-top: 2px dashed var(--ink);
+}
+.letter__sign {
+  font-family: var(--font-hand);
+  font-size: 34px;
+  line-height: 1;
+}
+.letter__route {
+  font-size: 11px;
+}
+
+/* ── Celular: cards empilhados, sem 3D ── */
+@media (max-width: 860px) {
+  .about {
+    overflow: visible;
+  }
+  .about__scene {
+    position: relative;
+    inset: auto;
+    transform: none !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    padding: 40px 16px 64px;
+  }
+  .tilt-card {
+    position: relative;
+    left: auto !important;
+    top: auto !important;
+    transform: none !important;
+    width: 100% !important;
+    max-width: 440px;
+  }
+  .tilt-card__tilt {
+    transform: none !important;
+  }
+  .tilt-card__frame {
+    display: none;
+  }
+  .postcard {
+    flex-direction: column;
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "kind": "intervalo",
+  "title": "O ganho sobre a régua se manteve no teste, mas por menos",
+  "source": "Quanto a nota da floresta passa a da régua. A faixa mostra onde a diferença real deve estar (95% de confiança)",
+  "accent": "Teste (aberto uma vez)",
+  "unit": "",
+  "decimals": 3,
+  "views": [
+    {
+      "label": "Ganho",
+      "rows": [
+        {
+          "label": "Validação",
+          "values": [
+            {
+              "series": "",
+              "value": 0.062192,
+              "low": 0.026756,
+              "high": 0.07499,
+              "note": null
+            }
+          ]
+        },
+        {
+          "label": "Teste (aberto uma vez)",
+          "values": [
+            {
+              "series": "",
+              "value": 0.0567,
+              "low": 0.016755,
+              "high": 0.065755,
+              "note": null
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
