@@ -1,6 +1,6 @@
 // Package content guarda o conteúdo do portfólio. Por enquanto é escrito direto
 // no código; troque por um banco ou por arquivos Markdown quando quiser.
-// Tudo entre [colchetes] é marcador: veja docs/CHECKLIST.md.
+// Tudo entre [colchetes] é marcador a preencher.
 package content
 
 import "portfolio/api/internal/model"

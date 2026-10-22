@@ -14,8 +14,6 @@ api/      back-end em Go: a fonte da verdade dos dados
 web/      front-end em React + TypeScript + Vite
   src/types/api.gen.ts   GERADO a partir de api/internal/model (não edite)
   src/pages/             About (Sobre), Writing (Escrita), Projects (Projetos)
-docs/     API.md (contrato) e CHECKLIST.md (o que preencher)
-design/   arquivos do canvas usados como referência visual
 articles/ textos da Escrita em Markdown: articles/<slug>/index.md (+ graficos/ e images/)
 ```
 
@@ -68,9 +66,8 @@ f1-macro
 O bloco `grafico` é trocado pelo gráfico interativo de `graficos/f1-macro.json`. Uma imagem sozinha no parágrafo sai numa moldura de janela:
 `![descrição para leitor de tela](images/print.png "texto da barra | legenda embaixo")`. Imagem no meio do texto fica sem moldura. O servidor lê tudo ao subir e
 **não sobe** se a pasta `articles/` não existir, se faltar um campo do cabeçalho, se a tag não existir, se um gráfico
-citado não tiver arquivo ou se dois textos tiverem o mesmo slug ou número: o erro diz qual. Mudou um texto? Reinicie o servidor. Os gráficos do preditor saem dos CSVs daquele projeto com
-`python3 articles/preditor/gerar_graficos.py <preditor>/data articles/preditor/graficos`. O gráfico ao vivo usa o placar das últimas 24 h, gravado por
-`python3 articles/preditor/placar_aovivo.py` (rode antes do gerador para atualizar).
+citado não tiver arquivo ou se dois textos tiverem o mesmo slug ou número: o erro diz qual. Mudou um texto ou um número de gráfico? Edite o `index.md` ou o
+JSON em `graficos/` e reinicie o servidor.
 
 ## Integrações (GitHub e Spotify)
 
